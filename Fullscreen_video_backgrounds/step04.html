@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full screen HTML5 video</title>
+</head>
+<body>
+<style type="text/css">
+    video#BG {
+        position: fixed; right: 0; bottom: 0;
+        min-width: 100%; min-height: 100%;
+        width: auto; height: auto; z-index: -100;
+        background: url(img/frame.jpg) no-repeat;
+        background-size: cover;
+    }
+</style>
+<video autoplay loop poster="img/frame.jpg" id="BG">
+    <source src="video/sun_reflection.webm" type="video/webm">
+    <source src="video/sun_reflection.mp4" type="video/mp4">
+</video>
+<div class="overlay">
+    <h1>Lorum Ipsum</h1>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</div>
+</body>
+</html>

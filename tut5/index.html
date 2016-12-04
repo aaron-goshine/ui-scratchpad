@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Polymer Gallery</title>
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="/elements/gallery.html">
+    <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+    <style>
+      body {
+        padding: 1em;
+        max-width: 50em;
+        margin: 0 auto;
+        background-color: #F9F9F9;
+      }
+
+      article {
+        font-size: 1.125em;
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body unresolved>
+    <article>
+      <h1>Web Components</h1>
+      <p>Web Components are a set of standards currently being produced by the W3C that allow for the creation of reusable widgets or components in web documents and web applications. The intention behind them is to bring component-based software engineering to the World Wide Web. The components model allows for encapsulation and interoperability of individual HTML elements.</p>
+
+      <shadow-gallery width="400"
+        auto="true"
+        interval="5000"
+        aria-orientation="horizontal"
+        images='[{"src": "http://lorempixel.com/400/200/abstract/1", "alt": "Image 1"},
+        {"src": "http://lorempixel.com/400/200/abstract/2", "alt": "Image 2"},
+        {"src": "http://lorempixel.com/400/200/abstract/3", "alt": "Image 3"},
+        {"src": "http://lorempixel.com/400/200/abstract/4", "alt": "Image 4"},
+        {"src": "http://lorempixel.com/400/200/abstract/5", "alt": "Image 5"}]'>
+      </shadow-gallery>
+
+      <p>Support for Web Components is present in some WebKit-based browsers like Google Chrome and Opera and is in the Mozilla Firefox Nightly version (requires a manual configuration change). Microsoft's Internet Explorer has not implemented any Web Components specifications yet. Backwards compatibility with older browsers is implemented using JavaScript-based polyfills.
+      </p>
+
+      <shadow-gallery class="filter-grayscale"
+        width="400"
+        aria-orientation="horizontal"
+        images='[{"src": "http://lorempixel.com/400/200/nature/1", "alt": "Image 1"},
+        {"src": "http://lorempixel.com/400/200/nature/2", "alt": "Image 2"},
+        {"src": "http://lorempixel.com/400/200/nature/3", "alt": "Image 3"},
+        {"src": "http://lorempixel.com/400/200/nature/4", "alt": "Image 4"},
+        {"src": "http://lorempixel.com/400/200/nature/5", "alt": "Image 5"}]'>
+      </shadow-gallery>
+
+      <p>Web Components consist of 4 main elements which can be used separately or all together:
+        <ul>
+          <li>Custom Elements</li>
+          <li>Shadow DOM</li>
+          <li>HTML Imports</li>
+          <li>HTML Templates</li>
+        </ul>
+      </article>
+    </body>
+  </html>

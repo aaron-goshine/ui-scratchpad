@@ -1,0 +1,52 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+    <style>
+        #bg {
+            position:relative;
+            height:281px; width:450px;
+            margin:0 auto;
+            background: #000;
+        }
+        img {position:absolute;left:0;}
+        .hidden {display: none;}
+        #bg ul{ 
+            width:450px;
+            position:absolute;
+            list-style: none; text-align: center; 
+            left:0; margin: 0; padding: 0;  
+        }
+        a {text-decoration: none; color: #fff;}
+        li {padding: 20px; border-bottom: 1px solid #fff;}
+        li:hover {background: #000;}    
+    </style>
+</head>
+    
+<body>
+    <div id="bg">
+        <img id="bg-one" src="images/wsi2.jpg" />
+        <img id="bg-two" class="hidden" src="images/wsi3.jpg" />
+        <img id="bg-three" class="hidden" src="images/wsi.jpg" />
+        <ul>
+            <a href="#"><li id="one">Link One</li></a>
+            <a href="#"><li id="two">Link Two</li></a>
+            <a href="#"><li id="three">Link Three</li></a>
+        </ul>
+    </div> 
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var lastOver = $("#bg-one");
+            var over;
+            $( "li" ).mouseover(function() {
+                over = "#bg-"+this.id;
+                $(over).fadeIn("slow");
+                lastOver.fadeOut("slow");
+                lastOver = $(over);
+            });
+        });
+    
+    </script>
+</body>
+</html>

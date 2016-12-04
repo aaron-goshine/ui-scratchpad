@@ -1,0 +1,81 @@
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+/******* MAIN STYLES ***********/
+
+.wrapper {
+
+	width: 500px;
+	margin: 0 auto;
+	
+	
+}
+
+.container {
+
+    position: relative;
+	width: 150px;
+	height: 400px;
+
+}
+
+h1{
+
+	font-family: 'Francois One', sans-serif;
+	font-size: 2em;
+}
+
+.ball {
+
+	background: url('../imgs/football.png');
+	width: 200px;
+	height: 200px;
+	margin: 20px 0px;
+	
+	-webkit-animation: ball-y ease-in 2.5s;
+	-webkit-animation-delay: 3000ms;
+
+}
+
+.grass {
+
+	background:url('../imgs/grass.jpg') no-repeat;
+	height: 50px;
+	width: 400px;
+	position: absolute;
+	top: 280px;
+	left:-85px;
+	z-index: -1;
+}
+
+
+@-webkit-keyframes ball-y {
+			0% { -webkit-transform: translateY(-255px);  }
+			
+			40% { -webkit-transform: translateY(-200px); }
+			65% { -webkit-transform: translateY(-85px);  }
+			82% { -webkit-transform: translateY(-50px);  }
+			92% { -webkit-transform: translateY(-20px);  }
+			
+			25%, 55%, 75%, 87%, 97%, 100% { -webkit-transform: translateY(0px); 
+				-webkit-animation-timing-function: ease-out; }
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

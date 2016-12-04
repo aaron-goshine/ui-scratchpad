@@ -1,0 +1,134 @@
+
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+
+.container{
+  overflow:hidden;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+.shaped{
+  height:100vh;
+  width:40vw;
+  float:right;
+  background: black url(../imgs/stonehenge.jpg) center top no-repeat;
+  background-size:cover;
+
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+  -webkit-shape-margin: 20px;
+
+}
+
+.content {
+  padding: 30px;
+  color: black;
+  font-size:15px;
+  text-align: justify;
+  line-height: 23px;
+  font-family: Verdana, Arial, sans-serif;
+
+}
+
+.content h1{
+  font-family: 'Sintony', sans-serif;
+  font-size:50px;
+  line-height:1;
+  float:left;
+  width:350px;
+  height:100vh;
+  margin-top:0;
+  padding-top:20px;
+  color: #3f3f3f;
+  -webkit-shape-outside: polygon(0 0, 100% 0, 40% 100%,  0 100%);
+  shape-outside: polygon(0 0, 100% 0, 40% 100%,  0 100%);
+
+}
+
+.content h1 span{
+  font-size:.5em;
+  display:inline-block;
+  margin-right: -10px;
+}
+
+
+
+
+.profile_img {
+
+  float: left;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin-right: 15px;
+  padding: 0px;
+
+  -webkit-shape-outside: circle();
+  -webkit-shape-margin: 10px;
+  border: 10px solid #f1f1f1;
+}
+
+
+
+.green_circle {
+
+  position: relative;
+}
+
+.circle { 
+   width: 100px;
+   height: 100px;
+   background: #9fb876; 
+   -moz-border-radius: 130px; 
+   -webkit-border-radius: 130px; 
+   border-radius: 130px;
+   position: absolute;
+   top: 350px;
+   left: 180px;
+   border: 10px solid #f1f1f1;
+}
+
+.circle p {
+
+  margin: 20px 0;
+  font-size: 1em;
+  text-align: center;
+  color: #3f3f3f;
+
+}
+
+#arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 380px;
+  left: 300px;
+  border-top: 18px solid transparent;
+  border-right: 18px solid #9fb876;;
+  -webkit-transform: rotate(5deg);
+
+}
+#arrow:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 6px solid #9fb876;;
+  border-radius: 20px 0 0 0;
+  top: -24px;
+  left: -18px;
+  width: 24px;
+  height: 24px;
+  -webkit-transform: rotate(45deg);
+
+}
+
+.blockquote {
+
+  text-align: center;
+}
+

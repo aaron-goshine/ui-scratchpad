@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Oak By Alfred Lord Tennyson</title>
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/page.css">
+  <style>
+    .wow:first-child {
+      visibility: hidden;
+    }
+  </style>
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+<script>
+
+<!--// Page scroller. Written by PerlscriptsJavascripts.com
+
+sStart = 0
+sTimer = 0;
+sPos   = 0;
+sSpeed = 0.9;
+sDelay = 6;
+
+function toTop() {
+sPos = 0;
+scrollTo(0,0);
+}
+function sDown() {
+sPos += sSpeed;
+window.scroll(0,sPos);
+sTimer = setTimeout("sDown()",10);
+}
+
+sStart = setTimeout("sDown()",sDelay * 1000);
+// -->
+</script>
+
+
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>The Oak</h1>
+      <h2>by Alfred Lord Tennyson</h2>
+    </header>
+    
+    <div>
+
+      <section>
+
+          <div class="stanza wow slideInRight">Live </div>
+          <div class="stanza wow bounceInDown" data-wow-delay="1s">thy</div>
+          <div class="stanza wow slideInRight" data-wow-delay="2s">Life,</div>
+          
+          <div class="stanza wow flipInX">Young and old,</div>       
+          
+          <div class="stanza wow rotateInUpLeft">Like yon oak,</div>
+          
+          <div class="stanza wow bounceIn">Bright in spring,</div>
+          
+          <div class="stanza lastline wow fadeIn">Living</div>
+          <div class="stanza lastline gold wow fadeIn" data-wow-delay="0.7s">gold;</div>
+
+      </section>
+      <section>
+          
+          <div class="stanza wow flipInY">Summer-rich</div>
+          
+          <div class="stanza newline wow slideInLeft">Then;</div>
+          <div class="stanza wow slideInDown">and</div>
+          <div class="stanza wow slideInRight">then</div>
+
+          <div class="stanza wow rotateIn">Autumn-changed</div>
+          
+          <div class="stanza wow fadeIn">Soberer-hued</div>
+          
+          <div class="stanza newline gold wow rotateInDownLeft">Gold</div>
+          <div class="stanza lastline gold wow rotateInDownRight" data-wow-delay="0.7s">again.</div>
+
+      </section>
+      <section>
+            
+          <div class="stanza wow fadeIn" data-wow-duration="4">All his leaves</div>
+          
+          <div class="stanza wow hinge" data-wow-delay="3s">Fall'n at length,</div>
+          
+          <div class="stanza newline wow shake">Look</div>
+          <div class="stanza wow flip">he</div>
+          <div class="stanza wow shake">stands,</div>
+          
+          <div class="stanza wow bounceIn">Trunk and bough</div>
+          
+          <div class="stanza inset lastline wow bounceInDown">Naked strength.</div>
+
+      </section>
+
+      
+
+  </div>
+
+    
+
+</div>
+
+<div class="newline footnote"><a href="javascript:toTop(); location.reload()">BACK TO TOP</a></div> 
+
+<div class="newline footnote"><a href="http://bit.ly/1imjx7P">Image credit</a></div>
+
+  <script src="js/wow.min.js"></script>
+  <script>
+    wow = new WOW(
+      {
+        animateClass: 'animated',
+        offset:       200
+      }
+    );
+    wow.init();
+  </script>
+
+
+
+
+</body>
+</html>

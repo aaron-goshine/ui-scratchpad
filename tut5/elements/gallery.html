@@ -1,0 +1,167 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymer-gestures/polymer-gestures.html">
+
+<polymer-element name="shadow-gallery"
+                 attributes="width images auto interval">
+    <template>
+        <style>
+            :host {
+                display: inline-block;
+                position: relative;
+            }
+
+            :host(.filter-grayscale) {
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
+
+                transition: all 0.15s linear;
+            }
+
+            :host(.filter-grayscale:hover) {
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+            }
+
+            #viewport {
+                height: 200px;
+                overflow: hidden;
+                position: relative;
+                width: {{width}}px;
+            }
+
+            #gallery {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                left: 0;
+                -webkit-transition: -webkit-transform 0.25s linear;
+                transition: all 0.25s linear;
+
+                -webkit-transform: translateX({{offset}}px);
+                transform: translateX({{offset}}px);
+                width: {{images.length * width}}px;
+            }
+
+            li {
+                float: left;
+            }
+
+            img {
+                max-width: {{width}}px;
+            }
+
+            .Control {
+                padding: 0.25em;
+                line-height: 1;
+                background-color: #000;
+                position: absolute;
+                top: calc(50% - 12px);
+                width: 1em;
+                height: 1em;
+                text-decoration: none;
+                color: #000;
+                border: 1px solid #ccc;
+                border-radius: 2em;
+                opacity: 0.5;
+                transition: opacity 25ms linear;
+            }
+
+            .Control:hover {
+                opacity: 1;
+            }
+
+            .Control:active {
+                top: calc(50% - 12px + 1px);
+            }
+
+            .Control--next {
+                right: 1em;
+            }
+
+            .Control--previous {
+                left: 1em;
+            }
+        </style>
+
+        <div id="viewport" style="width: {{width}}px;">
+            <ul id="gallery" touch-action="none"
+            style="-webkit-transform: translateX({{offset}}px);
+            transform: translateX({{offset}}px);
+            width: {{images.length * width}}px;">
+                    <template repeat="{{image in images}}">
+                        <li>
+                            <img src="{{image.src}}" alt="{{image.alt}}" />
+                        </li>
+                    </template>
+                </ul>
+        </div>
+
+        <a href="#"
+            class="Control Control--previous"
+            on-click="{{previous}}"
+            title="Previous"
+            tabindex="1"
+            aria-controls="gallery"></a>
+        <a href="#"
+            class="Control Control--next"
+            on-click="{{next}}"
+            title="Next"
+            tabindex="2"
+            aria-controls="gallery"></a>
+    </template>
+    <script>
+        Polymer({
+            images: [],
+            width: 100,
+            widthChanged: function (oldValue, newValue) {
+                console.log('width has changed - old: ', oldValue, 'new: ', newValue)
+                this.width = Math.min(newValue, window.innerWidth);
+                this.offset = -Math.min(Math.abs(this.offset), window.innerWidth);
+            },
+            offset: -400,
+            auto: false,
+            interval: 5000,
+            slide: null,
+            next: function (e) {
+                if (e) e.preventDefault();
+                if (this.offset > -this.width * (this.images.length - 1))
+                    this.offset -= this.width;
+            },
+            previous: function (e) {
+                if (e) e.preventDefault();
+                if (this.offset < 0)
+                    this.offset += this.width;
+            },
+            domReady: function () {
+                var self = this;
+
+                if (self.auto) {
+                    self.slide = setInterval(function () {
+                        if (self.offset > -self.width * (self.images.length - 1))
+                            self.next();
+                        else
+                            self.offset = 0;
+                    }, self.interval);
+                }
+
+                window.addEventListener('keydown', function (e) {
+                    if (e.keyCode === 37) //left
+                        self.previous();
+                    else if (e.keyCode === 39) //right
+                        self.next();
+                });
+
+                PolymerGestures.addEventListener(this.$.gallery, 'trackend', function (e) {
+                    if (e.dx < 0)
+                        self.next();
+                    else
+                        self.previous();
+                });
+            },
+            detached: function () {
+                clearInterval(this.slide);
+            }
+        });
+    </script>
+</polymer-element>

@@ -1,0 +1,104 @@
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+body { background-image: url(http://subtlepatterns.com/patterns/ricepaper.png) }
+
+/******* MAIN STYLES ***********/
+
+.wrapper {
+
+	width: 960px;
+	margin: 0px auto;
+	padding: 10px 0;
+}
+
+h1{
+
+	font-family: 'Francois One', sans-serif;
+	font-size: 2em;
+}
+
+.container {
+
+    position: relative;
+	width: 150px;
+	height: 400px;
+
+}
+
+.ball {
+
+    position: relative;
+    top: 0px;
+	background:#CC66FF;
+	width: 150px;
+	height: 150px;
+	border-radius: 100%;
+
+	-webkit-animation: moving ease-in-out 2s infinite;
+	
+}
+
+.line {
+
+	background: url('../imgs/line.png');
+	position: absolute;
+	width: 25px;
+	height: 100px;
+	top: -10px;
+	left: 62px;
+
+}
+
+.shadow {
+
+	position: relative;
+	height: 16px;
+	background: #999;
+	opacity: 0.1;
+	border-radius: 100%;
+	margin: 0px 0px 0px 0px;
+	top: 100px;
+
+	-webkit-animation: shadow ease 2s infinite;
+}
+
+/**** Move animation ****/
+
+@-webkit-keyframes moving {
+
+
+	   50% { top: 90px; -webkit-transform: scaleY(1.1);}
+	   100% { top: 0px; }
+
+}	   
+
+
+@-webkit-keyframes shadow {
+
+       
+	   50% { margin:0px 21% 0px 21%; opacity: 0.8; }
+	   100% { margin: 0px; opacity: 0.1;}
+
+	   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

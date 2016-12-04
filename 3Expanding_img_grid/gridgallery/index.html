@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>Grid Gallery Illusion</title>
+	
+	<link rel='stylesheet' href='css/style.css'>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+
+	<div id="container">
+	
+		<h1>Grid Gallery Illusion</h1>
+		
+		<div class="panel">
+		
+			<div class="col1 row1 p1"></div>
+			<div class="col1 row2 p2"></div>
+			<div class="col1 row3 p3"></div>
+			
+			<div class="col2 row1 p4"></div>
+			<div class="col2 row2 p5"></div>
+			<div class="col2 row3 p6"></div>
+			
+			<div class="col3 row1 p7"></div>
+			<div class="col3 row2 p8"></div>
+			<div class="col3 row3 p9"></div>
+			
+			<span id="pointer"></span>
+			
+			<span class="expand panel-six"></span>
+			<span class="expand panel-five"></span>
+			<span class="expand panel-one"></span>
+		
+		</div>
+		
+	</div>
+
+	<script>
+		$(function() {
+			
+			$all = $(".panel > div");
+			
+			var zindex = 2;
+			
+			$all.click(function() {
+			
+				$(this)
+					.css("z-index", zindex)
+					.toggleClass("active");
+					
+				zindex++;
+			
+			});
+						
+		});
+	
+	</script>
+	
+</body>
+
+</html>
